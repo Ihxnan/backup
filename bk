@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+rm *.tar.gz
+
+./backup
+
+git add .
+
+git commit -m "update"
+
+git push

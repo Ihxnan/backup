@@ -1,0 +1,23 @@
+#!/usr/bin/python3.13
+
+import os, time
+
+source = ['/home/ihxnan/.config/alacritty/', '/home/ihxnan/.config/nvim/', '/home/ihxnan/.config/fish/', '/home/ihxnan/.config/i3blocks/', '/home/ihxnan/.config/ranger/', '/home/ihxnan/.i3/config', '/home/ihxnan/.vimrc']
+
+target_dir = '/home/ihxnan/Github/backup/'
+
+name = 'Manjaro_back'
+
+comment = input('Enter a comment --> ')
+
+if len(comment) == 0:
+    target = name + '.tar.gz'
+else:
+    target = comment.replace(' ', '_') + '.tar.gz'
+
+tar_command = "tar -zcf %s %s" % (target, ' '.join(source))
+
+if os.system(tar_command) == 0:
+    print('Successful backup to', target)
+else:
+    print('Backup Failed')
