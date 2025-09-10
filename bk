@@ -2,7 +2,7 @@
 
 rm *.tar.gz
 
-./backup
+./scripts/backup
 
 git add .
 
