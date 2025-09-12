@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 rm *.tar.gz
+rm -rf ./home/
 
 ./scripts/backup
 
